@@ -34,17 +34,17 @@ WARNING!!! WARNING!!!
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
 
-var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+(function () {
+  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
 
 // STEP 10:
 // Loop over the names array and say either 'Hello' or "Good Bye"
 // using the 'speak' method or either helloSpeaker's or byeSpeaker's
 // 'speak' method.
 // See Lecture 50, part 1
-for (var name in names /* fill in parts of the 'for' loop to loop over names array */) {
-  var first_letter = names[name][0].toLowerCase();
-  name = names[name];
-  //n = n.toLowerCase();
+  for (var name in names /* fill in parts of the 'for' loop to loop over names array */) {
+    var first_letter = names[name][0].toLowerCase();
+    name = names[name];
   // STEP 11:
   // Retrieve the first letter of the current name in the loop.
   // Use the string object's 'charAt' function. Since we are looking for
@@ -59,11 +59,12 @@ for (var name in names /* fill in parts of the 'for' loop to loop over names arr
   // 'j'. If the same, call byeSpeaker's 'speak' method with the current name
   // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
   // name in the loop.
-  if (first_letter == 'j'/* fill in condition here */) {
-    byeSpeaker.sayBye(name); 
+    if (first_letter == 'j') {
+      byeSpeaker.sayBye(name); 
     // byeSpeaker.xxxx
-  } else {
-    helloSpeaker.sayHello(name);
+    } else {
+      helloSpeaker.sayHello(name);
     // helloSpeaker.xxxx
+    }
   }
-}
+})();
